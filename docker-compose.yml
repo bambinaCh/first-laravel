@@ -52,7 +52,7 @@ services:
             - mysql
         environment:
             PMA_HOST: mysql
-            PMS_PORT: 3306
+            PMA_PORT: 3306
         depends_on:
             mysql:
                 condition: service_healthy
