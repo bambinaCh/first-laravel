@@ -1,3 +1,11 @@
 body{
     background-color: rgb(251, 184, 231);
 }
+
+h1.a{
+    color: rgb(114, 37, 114);
+}
+
+a{
+    text-decoration: none;
+}
