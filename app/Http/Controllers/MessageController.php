@@ -63,17 +63,20 @@ class MessageController extends Controller
         return redirect('/messages');
     }
 
-    // public function edit($id)
-    // {
-    //     // ask the database for the message with the ID that we got
-    //     // as a parameter. It is the same ID that we used to
-    //     // generate the links to the message details
-    //     // and the same ID that web.php took out of the link.
-    //     // then we directly call the delete-method of
-    //     // the Message-OBject that we get back from the
-    //     // findOrFail function.
-    //     $result = Message::findOrFail($id)->edit();
-    //     // after that we redirect to the message list again
-    //     return redirect('/messages');
-    // }
+    
+    public function update(Request $request, $id) {
+ 
+        $request->validate([
+            'title' => 'required',
+            'content' => 'required'
+        ]);
+  
+        $data = Message::findOrFail($id);
+        $data->title = $request->title;
+        $data->content = $request->content;
+        $data->save();
+  
+        return redirect('/messages');
+   }
+ 
 }

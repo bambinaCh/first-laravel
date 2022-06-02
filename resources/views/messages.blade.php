@@ -15,13 +15,13 @@
     @section('title','Bambi Twitt')
     @section('content')
 
-    <h2>Create new message:</h2>
+    <h2 style="align-items: center;">Create new message:</h2>
     <form action="/create" method="post">
         <input type="text" name="title" placeholder="Title">
         <input type="text" name="content" placeholder="Content">
         <!-- this blade directive is necessary for all form posts somewhere in between the form tags -->
         @csrf
-        <button type="submit">Submit</button>
+        <button class="btn btn-default" type="submit">Submit</button>
     </form>
     <br>
     <h3>Recent messages:</h3>
@@ -37,21 +37,13 @@
         <form action="/message/{{$message->id}}" method="post">
             @csrf
             @method('delete')
-            <button type="submit">Delete</button>
+            <button class="btn btn-default" type="submit">Delete</button>
         </form>
-        
-        <!-- <form action="/message/{{$message->id}}" method="post">
-            @csrf
-            @method('edit')
-            <button type="submit">Edit</button>
-        </form>
-
-        <form action="/message/{{$message->id}}" method="post">
-            @csrf
-            @method('save')
-            <button type="submit">Save</button>
-        </form><br> -->
+        <span>{{ $message->updated_at->diffForHumans() }}</span>
+        <a class="btn btn-default" href="/message/{{$message->id}}">Edit</a>
+        <br>
     </li>
+
     @endforeach
 
 
