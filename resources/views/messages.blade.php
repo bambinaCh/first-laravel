@@ -14,7 +14,7 @@
     @extends('layouts/master')
     @section('title','Bambi Twitt')
     @section('content')
-
+    <img src="{{asset('img/B.png')}}">
     <h2 style="align-items: center;">Create new message:</h2>
     <form action="/create" method="post">
         <input type="text" name="title" placeholder="Title">
