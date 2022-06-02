@@ -6,3 +6,32 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+$font-stack: nunito;
+$primary-color: #333;
+$background-color: rgb(251, 184, 231);
+$list-style-type: none;
+
+
+body {
+    font: 100% $font-stack;
+    color: $primary-color;
+    background-color: $background-color;
+   
+}
+
+
+a, li {
+    list-style-type: $list-style-type;
+}
+
+a {
+    color: rgb(159, 0, 190);
+    text-decoration: none;
+   
+}
+
+h1{
+    align-content: center;
+}
+

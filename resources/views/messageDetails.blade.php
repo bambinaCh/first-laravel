@@ -1,5 +1,3 @@
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="{{asset('../css/main.css') }}">
 <!--extend layout master.blade.php -->
 @extends('layouts.master')
 
@@ -15,13 +13,10 @@ ts value for section title to "Mini Twitter" (section content is used in message
 <p>{{$message->content}}</p><br>
 
 <form action="/update/{{$message->id}}" method="post">
-   <input type="text" name="title" value="{{$message->title}}">
-   <input type="text" name="content" value="{{$message->content}}">
-   @csrf
-   <button type="submit">Save</button>
+    <input type="text" name="title" value="{{$message->title}}">
+    <input type="text" name="content" value="{{$message->content}}">
+    @csrf
+    <button type="submit">Save</button>
 </form>
 
 @endsection
-
-
-
